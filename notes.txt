@@ -7,3 +7,6 @@ Types of services
 
 
 kubectl apply -f k8s - build all config file inside the directory k8s
+
+worker deployment dosen't need a service component of type CLusterIp, because no other object needs to connect
+to the worker. But worker has to connect to other objects.
