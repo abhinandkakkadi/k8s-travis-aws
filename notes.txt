@@ -10,3 +10,31 @@ kubectl apply -f k8s - build all config file inside the directory k8s
 
 worker deployment dosen't need a service component of type CLusterIp, because no other object needs to connect
 to the worker. But worker has to connect to other objects.
+
+kubectl logs <obect-name eg: pod-name> - give logs created by that pod 
+
+ 
+volume - unlike in docker volume in kubernetis is and object that allows container to store data on a pod level 
+volume and PVC are different 
+volumes in kubernetis will live a container restart
+But if a pods itself is recreated the pod will just dies off. So we don't usualyy use normal volume in kubernetis 
+
+But persistence volume on the other hand reside outside the Pods and can live 
+
+
+PVC - persistence volume claim 
+whenever we want a persistent volume for our pods 
+There are two types that are normally available to us. 
+
+Persistent volume claim is like an advertisment where they show some predefined storage option
+Statically provishoned persistent volume (if it is already defiend by kubernetis)
+Dynamically provishoned persistent volume 
+
+
+Inside PersistenceVolumeClaim component 
+We can see AccessModes 
+  ReadWriteOnce - can be used by a single NodePort
+  ReadOnlyMany - multiple nodes can read from this 
+  ReadWriteMany - Can be read and written to by many nodes 
+
+
