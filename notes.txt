@@ -4,3 +4,6 @@ Types of services
   NodePort - exposes a set of port to outside world (development purpose)
   LoadBalancer 
   Ingres 
+
+
+kubectl apply -f k8s - build all config file inside the directory k8s
