@@ -1,0 +1,6 @@
+For any kind of networking for a component we have to use some services 
+Types of services
+  clusterIP - exposes a set of ports to other components in kubernetis cluster
+  NodePort - exposes a set of port to outside world (development purpose)
+  LoadBalancer 
+  Ingres 
