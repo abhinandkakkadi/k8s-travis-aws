@@ -38,3 +38,13 @@ We can see AccessModes
   ReadWriteMany - Can be read and written to by many nodes 
 
 
+We will define the password in secret in imperative way. Because if if write password in config file. That would defeat the purpose
+
+CREATING A SECRET COMMAND 
+kubectl create secret generic <secret-name> --from-literal key=value 
+kubectl create secret generic pgpassword --from-literal PGPASSWORD=1234asdf
+
+generic - It's a type of secret -- other available (docker-registry, tls)
+--from-literal - we are giving secret key value pair at the time of writing this command rather than writing that inside a file. 
+
+

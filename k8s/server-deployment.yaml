@@ -30,3 +30,9 @@ spec:
               value: "5432"
             - name: PGDATABASE
               value: postgres
+            - name: PGPASSWORD # k8s will take the value from secret and then assign it to PGPASSWORD env of the container
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  key: PGPASSWORD # that we set on secret imperatively
+
