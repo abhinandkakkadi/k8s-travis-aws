@@ -48,3 +48,16 @@ generic - It's a type of secret -- other available (docker-registry, tls)
 --from-literal - we are giving secret key value pair at the time of writing this command rather than writing that inside a file. 
 
 
+ingres setup will vay on local and on all cloud providers 
+
+when traffic hit it hits the ingres controller + thing that route traffic routes to distinated services 
+
+workflow 
+traffic goes to Google cloud load balancer -> it forwards it to loadBalancer service(kubernetis service) which passes it to 
+nginx pod created to ingres controller which then routes to different services 
+
+when ingres is setup a default backend deployment is setup by default 
+for health check purposes
+
+we are using this way rather than bulting a custom nginx because it knows most of kubernetis related stuffs and it also routes directly to pod in 
+some instances rather than to services. 
