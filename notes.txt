@@ -61,3 +61,6 @@ for health check purposes
 
 we are using this way rather than bulting a custom nginx because it knows most of kubernetis related stuffs and it also routes directly to pod in 
 some instances rather than to services. 
+
+// apply a ingres - nginx config file on the current cluster 
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
