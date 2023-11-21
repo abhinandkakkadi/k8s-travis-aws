@@ -1,6 +1,10 @@
 sudo: required
 services:
   - docker
+env:
+  global:
+    - SHA=$(git rev-parse HEAD)
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1 # (don't show are you sure kind of prompts in these process)
 before_install:
   # line of code for specifying the encrypted service json file (for gcloud auth)
   - curl https://sdk.cloud.google.com | bash > /dev/null; # download and install google cloud sdk on temporary vm in travis
@@ -15,3 +19,9 @@ before_install:
 
 script:
   - docker run -e CI=true USERNAME/react-test npm test
+
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
