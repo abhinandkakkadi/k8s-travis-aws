@@ -17,6 +17,6 @@ spec:
           image: abhinandkakkadi/multi-worker
           env:
             - name: REDIS_HOST
-              value: redis-cluster-ip-service # name of cluster service not deployment (pod)
+              value: redis-cluster-ip-service
             - name: REDIS_PORT
               value: "6379"

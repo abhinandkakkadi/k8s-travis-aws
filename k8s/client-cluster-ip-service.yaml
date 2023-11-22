@@ -7,6 +7,5 @@ spec:
   selector:
     component: web
   ports:
-    - port: 3000 # current service port (this port will be available for other components to access this pods)
-      targetPort: 3000 # the underlying pods port
-
+    - port: 3000
+      targetPort: 3000
